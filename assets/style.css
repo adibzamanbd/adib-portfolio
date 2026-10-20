@@ -1832,3 +1832,227 @@ input:focus-visible {
   font-size: 7px;
   color: #8a8b80;
 }
+/* About */
+.about-section {
+  z-index: 3;
+  padding-block: clamp(85px, 11vw, 155px) clamp(100px, 12vw, 175px);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(45px, 8vw, 120px);
+  align-items: center;
+  margin-top: clamp(45px, 7vw, 95px);
+}
+.about-art {
+  position: relative;
+  min-height: clamp(500px, 61vw, 780px);
+  isolation: isolate;
+}
+.about-photo-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74%;
+  height: 76%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 102, 81, 0.35);
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+  background: var(--panel);
+}
+.about-photo-main:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 18, 15, 0.04),
+    transparent 45%,
+    rgba(17, 18, 15, 0.68)
+  );
+  pointer-events: none;
+}
+.about-photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: saturate(0.73) contrast(1.03);
+  transition:
+    filter 0.6s,
+    transform 1.4s var(--ease);
+}
+.about-photo-main:hover img {
+  filter: saturate(1);
+  transform: scale(1.03);
+}
+.photo-coordinate,
+.photo-caption {
+  position: absolute;
+  z-index: 2;
+  left: 15px;
+  font-size: 7px;
+}
+.photo-coordinate {
+  top: 15px;
+  background: rgba(17, 18, 15, 0.75);
+  padding: 7px 9px;
+  color: var(--acid);
+}
+.photo-caption {
+  bottom: 14px;
+  right: 14px;
+  color: var(--bone);
+}
+.about-card-photo {
+  position: absolute;
+  z-index: 4;
+  right: 1%;
+  bottom: 7%;
+  width: 43%;
+  height: 42%;
+  padding: 8px;
+  background: var(--bone);
+  color: var(--void);
+  transform: rotate(4.5deg);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+  transition: transform 0.7s var(--ease);
+}
+.about-card-photo:hover {
+  transform: rotate(0) translateY(-8px);
+}
+.about-card-photo img {
+  width: 100%;
+  height: calc(100% - 24px);
+  object-fit: cover;
+  object-position: center 38%;
+  filter: saturate(0.82);
+}
+.about-card-photo span {
+  display: block;
+  font-size: 7px;
+  padding: 7px 1px 0;
+}
+.about-geometry {
+  position: absolute;
+  z-index: 3;
+  right: 3%;
+  top: 5%;
+  width: 38%;
+  stroke: var(--acid);
+  stroke-width: 0.7;
+  opacity: 0.75;
+  overflow: visible;
+  animation: geometry-float 44s linear infinite reverse;
+}
+.about-geometry circle {
+  stroke: var(--ember);
+  stroke-dasharray: 2 5;
+}
+.about-sticker {
+  position: absolute;
+  z-index: 5;
+  left: 5%;
+  bottom: 3%;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: var(--ember);
+  display: grid;
+  place-items: center;
+  color: var(--void);
+  box-shadow: 0 0 45px rgba(255, 102, 81, 0.23);
+}
+.about-sticker svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: rune-spin 18s linear infinite;
+}
+.about-sticker text {
+  font-size: 9px;
+  fill: var(--void);
+  font-weight: 500;
+}
+.about-sticker > span {
+  font: 800 29px var(--display);
+  letter-spacing: -0.12em;
+}
+.about-copy {
+  padding-block: 18px;
+}
+.about-title {
+  margin: 0;
+  font: 800 clamp(38px, 5.9vw, 78px)/0.91 var(--display);
+  letter-spacing: -0.09em;
+}
+.about-title em {
+  color: var(--ember);
+  font-style: normal;
+}
+.about-lead {
+  max-width: 540px;
+  margin: clamp(26px, 4vw, 48px) 0 22px;
+  color: var(--bone);
+  font: 500 clamp(16px, 1.7vw, 21px)/1.5 var(--display);
+  letter-spacing: -0.025em;
+}
+.about-body {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.about-body p {
+  margin: 0 0 14px;
+}
+.about-signature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  max-width: 550px;
+  padding-top: 23px;
+  margin-top: 27px;
+  border-top: 1px solid var(--line);
+}
+.signature-scribble {
+  font:
+    italic 48px/1 Georgia,
+    serif;
+  color: var(--acid);
+  letter-spacing: -0.08em;
+  transform: rotate(-9deg);
+}
+.about-signature-row > span:last-child {
+  font-size: 7px;
+  line-height: 1.8;
+  text-align: right;
+  color: var(--muted);
+}
+.text-arrow-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  width: max-content;
+  max-width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ember);
+  font-size: 8px;
+  color: var(--bone);
+}
+.text-arrow-link span {
+  color: var(--muted);
+}
+.text-arrow-link b {
+  font-size: 14px;
+  color: var(--acid);
+  font-weight: 400;
+  transition: transform 0.3s;
+}
+.text-arrow-link:hover b {
+  transform: translate(4px, -4px);
+}
