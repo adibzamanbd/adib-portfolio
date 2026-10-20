@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11120f" />
+    <meta
+      name="description"
+      content="Sign in to the Adib Zaman creative workspace."
+    />
+    <title>Sign in — Adib Zaman</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./sign-in.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+    <script defer src="auth-config.js"></script>
+    <script defer src="auth.js"></script>
+  </head>
+  <body class="inferno-theme signin-body">
+    <!-- Sign-in page background details start -->
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="edge-vignette" aria-hidden="true"></div>
+    <!-- Sign-in form section start -->
+    <main class="signin-page" id="auth-backdrop">
+      <section
+        class="auth-modal"
+        id="auth-modal"
+        aria-labelledby="auth-modal-title"
+      >
+        <div class="auth-visual">
+          <div class="auth-visual-grid" aria-hidden="true"></div>
+          <div class="auth-visual-top">
+            <span class="auth-brand-mark">AZ<span>✳</span></span
+            ><span>INDEPENDENT ACCESS / 001</span>
+          </div>
+          <svg
+            class="auth-orbit-art"
+            viewBox="0 0 360 360"
+            aria-hidden="true"
+            fill="none"
+          >
+            <defs>
+              <linearGradient
+                id="auth-gradient"
+                x1="41"
+                y1="47"
+                x2="302"
+                y2="319"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#D7FF62" />
+                <stop offset=".55" stop-color="#F0EEE5" />
+                <stop offset="1" stop-color="#FF6651" />
+              </linearGradient>
+            </defs>
+            <circle
+              class="auth-art-ring auth-art-ring-1"
+              cx="180"
+              cy="180"
+              r="132"
+              stroke="url(#auth-gradient)"
+              stroke-width="1"
+              stroke-dasharray="3 7"
+            />
+            <ellipse
+              class="auth-art-ring auth-art-ring-2"
+              cx="180"
+              cy="180"
+              rx="72"
+              ry="138"
+              stroke="#D7FF62"
+              stroke-opacity=".72"
+            />
+            <ellipse
+              class="auth-art-ring auth-art-ring-3"
+              cx="180"
+              cy="180"
+              rx="138"
+              ry="64"
+              stroke="#F0EEE5"
+              stroke-opacity=".32"
+              transform="rotate(-32 180 180)"
+            />
+            <path
+              d="M83 242C102 94 223 56 275 140S202 280 121 185 197 94 264 227"
+              stroke="url(#auth-gradient)"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <circle cx="264" cy="227" r="4" fill="#FF6651" />
+            <circle cx="83" cy="242" r="4" fill="#D7FF62" />
+          </svg>
+          <div class="auth-visual-copy">
+            <span>THE CREATIVE WORKSPACE</span>
+            <h2>Good ideas<br />need room<br />to <em>evolve.</em></h2>
+            <p>
+              A small identity layer for future experiments, work-in-progress
+              notes, and whatever comes next.
+            </p>
+          </div>
+          <div class="auth-visual-bottom">
+            <span>NO SHORTCUTS. NO STATIC IDEAS.</span
+            ><span>ADIB ZAMAN © 2026</span>
+          </div>
+        </div>
+        <div class="auth-panel">
+          <div class="auth-panel-top">
+            <span class="auth-panel-kicker" id="auth-modal-title"
+              >MEMBER ACCESS / OPTIONAL</span
+            ><a
+              class="auth-close"
+              id="auth-close"
+              href="../index.html"
+              aria-label="Return to portfolio"
+              >✕</a
+            >
+          </div>
+          <div class="auth-system-line" aria-hidden="true">
+            <span class="auth-system-pulse"></span><span>IDENTITY SYSTEM</span
+            ><span class="auth-system-line-rule"></span><span>V.01</span>
+          </div>
+          <div class="auth-form-view" id="auth-form-view">
+            <div class="auth-heading">
+              <p class="auth-eyebrow" id="auth-eyebrow">
+                GOOD TO SEE YOU AGAIN
+              </p>
+              <h2 id="auth-title">Welcome <em>back.</em></h2>
+              <p id="auth-subtitle">
+                Sign in to your workspace. Your password goes directly to the
+                configured authentication provider.
+              </p>
+            </div>
+            <div class="auth-tabs" role="tablist" aria-label="Account option">
+              <button
+                class="auth-tab is-active"
+                type="button"
+                data-auth-mode="signin"
+                role="tab"
+                aria-selected="true"
+              >
+                Sign in</button
+              ><button
+                class="auth-tab"
+                type="button"
+                data-auth-mode="signup"
+                role="tab"
+                aria-selected="false"
+              >
+                Create account
+              </button>
+            </div>
+            <form id="auth-form" novalidate>
+              <label class="auth-field" for="auth-email"
+                ><span>Email address</span
+                ><input
+                  id="auth-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+              /></label>
+              <label class="auth-field" for="auth-password"
+                ><span>Password</span
+                ><span class="auth-password-wrap"
+                  ><input
+                    id="auth-password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="At least 8 characters"
+                    minlength="8"
+                    required
+                  /><button
+                    id="auth-toggle-password"
+                    type="button"
+                    aria-label="Show password"
+                  >
+                    SHOW
+                  </button></span
+                ></label
+              >
+              <label
+                class="auth-field auth-confirm-field"
+                id="auth-confirm-field"
+                for="auth-confirm-password"
+                hidden
+                ><span>Confirm password</span
+                ><span class="auth-password-wrap"
+                  ><input
+                    id="auth-confirm-password"
+                    name="confirmPassword"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="Repeat your password"
+                    minlength="8"
+                  /><button
+                    id="auth-toggle-confirm-password"
+                    type="button"
+                    aria-label="Show confirm password"
+                  >
+                    SHOW
+                  </button></span
+                ></label
+              >
+              <div class="auth-form-meta">
+                <span id="auth-password-hint">Use at least 8 characters.</span
+                ><button
+                  class="auth-text-button"
+                  id="auth-forgot"
+                  type="button"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              <button class="auth-submit" id="auth-submit" type="submit">
+                <span id="auth-submit-label">SIGN IN</span
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12h15M12 5l7 7-7 7" /></svg
+                ><span class="auth-submit-glint" aria-hidden="true"></span>
+              </button>
+            </form>
+            <div class="auth-separator">
+              <span></span><i>OR CONTINUE WITH</i><span></span>
+            </div>
+            <div class="auth-socials">
+              <button
+                class="auth-social"
+                type="button"
+                data-auth-provider="github"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M9 19c-4.3 1.3-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.7c3-.3 6.1-1.5 6.1-6.7A5.2 5.2 0 0 0 18.8 5a4.8 4.8 0 0 0-.1-3S17.5 1.7 15 3.5a13.5 13.5 0 0 0-7 0C5.5 1.7 4.3 2 4.3 2A4.8 4.8 0 0 0 4.2 5a5.2 5.2 0 0 0-1.4 3.7c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.7V22"
+                  />
+                </svg>
+                GitHub</button
+              ><button
+                class="auth-social"
+                type="button"
+                data-auth-provider="google"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.6ZM12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2 .9-3.4.9-2.6 0-4.8-1.8-5.6-4.1H3v2.7A10 10 0 0 0 12 22ZM6.4 13.8a6 6 0 0 1 0-3.7V7.4H3a10 10 0 0 0 0 9.1l3.4-2.7ZM12 6c1.5 0 2.9.5 3.9 1.5l2.9-2.9A9.8 9.8 0 0 0 12 2a10 10 0 0 0-9 5.4l3.4 2.7C7.2 7.8 9.4 6 12 6Z"
+                  />
+                </svg>
+                Google
+              </button>
+            </div>
+            <p class="auth-config-note" id="auth-config-note">
+              Authentication is not connected yet. Add your Supabase project URL
+              and public key to <code>auth-config.js</code>; this form will not
+              pretend to sign you in.
+            </p>
+            <p
+              class="auth-status"
+              id="auth-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+          </div>
+          <div class="auth-account-view" id="auth-account-view" hidden>
+            <span class="auth-account-icon"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"
+                /></svg
+            ></span>
+            <p class="auth-eyebrow">IDENTITY CONFIRMED</p>
+            <h2 id="auth-account-title">You're <em>in.</em></h2>
+            <p class="auth-account-email" id="auth-account-email"></p>
+            <p class="auth-account-note">
+              Signed in successfully. The public portfolio is still open to
+              everyone; account-only features can be added when there is
+              something worth keeping private.
+            </p>
+            <p
+              class="auth-status"
+              id="auth-account-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+            <button class="auth-signout" id="auth-signout" type="button">
+              SIGN OUT <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p class="auth-legal">
+            By continuing, you agree to use this site responsibly.
+            Authentication is handled by the configured provider—not by this
+            static page storing your password.
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- Sign-in page section end -->
+  </body>
+</html>

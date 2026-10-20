@@ -1,0 +1,167 @@
+/* Standalone sign-in page overrides. Shared visual styles are in styles.css. */
+/* Sign-in page: standalone layout */
+.signin-body {
+  min-height: 100svh;
+  overflow: hidden;
+  background: #11120f;
+}
+.signin-page {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 2.5vh, 28px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.signin-page .auth-modal {
+  width: min(1080px, 100%);
+  max-height: calc(100svh - 32px);
+  min-height: 0;
+  height: min(690px, calc(100svh - 32px));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  overflow: hidden;
+  margin: auto;
+}
+.signin-page .auth-visual {
+  min-height: 0;
+  padding: clamp(20px, 2.5vw, 36px);
+}
+.signin-page .auth-visual-copy {
+  padding-top: clamp(100px, 15vh, 170px);
+}
+.signin-page .auth-orbit-art {
+  width: min(82%, 340px);
+}
+.signin-page .auth-panel {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(18px, 2.5vw, 34px);
+  scrollbar-width: thin;
+  scrollbar-color: #ff6651 #191a16;
+}
+.signin-page .auth-panel-top {
+  flex-shrink: 0;
+}
+.signin-page .auth-system-line {
+  margin-top: 14px;
+}
+.signin-page .auth-heading {
+  margin: 18px 0 16px;
+}
+.signin-page .auth-heading h2 {
+  font-size: clamp(30px, 3vw, 43px);
+}
+.signin-page .auth-heading > p:last-child {
+  margin-top: 8px;
+  line-height: 1.55;
+}
+.signin-page .auth-field {
+  margin-bottom: 12px;
+}
+.signin-page .auth-field input {
+  padding: 10px 12px;
+}
+.signin-page .auth-submit {
+  margin-top: 12px;
+  min-height: 46px;
+}
+.signin-page .auth-separator {
+  margin: 14px 0 10px;
+}
+.signin-page .auth-social {
+  padding: 9px;
+}
+.signin-page .auth-config-note {
+  margin-top: 12px;
+  padding: 9px 10px;
+  line-height: 1.55;
+}
+.signin-page .auth-legal {
+  margin-top: 14px;
+  padding-top: 11px;
+}
+.signin-page .auth-close {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .signin-page .auth-modal {
+    height: calc(100svh - 24px);
+    max-height: calc(100svh - 24px);
+  }
+  .signin-page .auth-visual-copy {
+    padding-top: 95px;
+  }
+  .signin-page .auth-panel {
+    padding-block: 16px;
+  }
+  .signin-page .auth-heading {
+    margin: 12px 0;
+  }
+  .signin-page .auth-separator {
+    margin: 10px 0 8px;
+  }
+  .signin-page .auth-legal {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 760px) {
+  .signin-body {
+    overflow: auto;
+  }
+  .signin-page {
+    display: block;
+    min-height: 100svh;
+    padding: 12px;
+  }
+  .signin-page .auth-modal {
+    display: flex;
+    flex-direction: column;
+    width: min(520px, 100%);
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+  }
+  .signin-page .auth-visual {
+    height: 190px;
+    min-height: 190px;
+    flex: 0 0 190px;
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .signin-page .auth-orbit-art {
+    width: 190px;
+    left: auto;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .signin-page .auth-visual-copy {
+    padding-top: 12px;
+    margin: 0;
+  }
+  .signin-page .auth-visual-copy h2 {
+    font-size: 27px;
+    margin: 8px 0;
+  }
+  .signin-page .auth-visual-copy p {
+    display: none;
+  }
+  .signin-page .auth-visual-bottom {
+    font-size: 6px;
+  }
+  .signin-page .auth-panel {
+    overflow: visible;
+    padding: 18px 16px 22px;
+  }
+  .signin-page .auth-heading h2 {
+    font-size: 34px;
+  }
+}
+/* Sign-in page layout end */
