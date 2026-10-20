@@ -1,0 +1,33 @@
+/* ============================================================
+   GLOBAL RESET, TOKENS, AND BASE ELEMENTS
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+:root {
+  --void: #11120f;
+  --void-2: #191a16;
+  --panel: #191a16;
+  --panel-2: #252720;
+  --bone: #f0eee5;
+  --muted: #8a8b80;
+  --line: rgba(240, 238, 229, 0.16);
+  --line-hot: rgba(255, 102, 81, 0.32);
+  --ember: #ff6651;
+  --lava: #dc493a;
+  --amber: #ff6651;
+  --acid: #d7ff62;
+  --sulfur: #f0eee5;
+  --mono: "DM Mono", monospace;
+  --sans: "Space Grotesk", sans-serif;
+  --display: "Space Grotesk", sans-serif;
+  --max: 1440px;
+  --ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --hot-glow: 0 0 60px rgba(255, 102, 81, 0.22);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--void);
+  scroll-behavior: auto;
+  scroll-padding-top: 90px;
+}
