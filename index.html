@@ -41,7 +41,7 @@
     <script defer src="./assets/auth.js"></script>
   </head>
   <body class="inferno-theme">
-    <!-- <canvas id="inferno-smoke" aria-hidden="true"></canvas>
+    <canvas id="inferno-smoke" aria-hidden="true"></canvas>
     <div class="noise-layer" aria-hidden="true"></div>
     <div class="edge-vignette" aria-hidden="true"></div>
     <div class="reading-bar" aria-hidden="true">
@@ -90,9 +90,9 @@
     </div>
     <div class="cursor-caption" id="cursor-caption" aria-hidden="true">
       DRAG THE CHAOS
-    </div> -->
+    </div>
 
-        <!-- Header section start -->
+    <!-- Header section start -->
     <header class="topbar" id="topbar">
       <a href="#top" class="brand-lockup" aria-label="Adib Zaman, back to top"
         ><span class="brand-glyph">A<span>Z</span></span
@@ -125,5 +125,180 @@
         <span></span><span></span>
       </button>
     </header>
+    <!-- Main content sections start -->
+    <main id="top">
+      <!-- Hero section start -->
+      <section
+        class="hero inferno-section"
+        id="main-content"
+        aria-labelledby="hero-title"
+      >
+        <div class="hero-ambient" aria-hidden="true">
+          <span class="ambient-orb orb-a"></span
+          ><span class="ambient-orb orb-b"></span
+          ><span class="ambient-orb orb-c"></span>
+        </div>
+        <svg
+          class="hero-geometry geometry-one"
+          viewBox="0 0 300 300"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M150 8C171 66 234 39 285 106C226 114 265 196 198 286C170 226 91 272 17 213C68 174 10 100 150 8Z"
+          />
+          <path d="M150 35 259 108 217 239 82 259 33 125 150 35Z" />
+          <circle cx="150" cy="150" r="94" />
+          <path
+            d="M150 56C174 95 217 101 245 150C202 162 185 204 150 244C115 204 98 162 55 150C83 101 126 95 150 56Z"
+          />
+        </svg>
+        <div class="hero-headline-wrap content-shell">
+          <div class="hero-stamp-row">
+            <p class="kicker">
+              <span class="signal-pip"></span> DESIGN / CODE / CREATIVE
+              DESTRUCTION
+            </p>
+            <span class="hero-index">FIG. 001 / THE UNEXPECTED</span>
+          </div>
+          <div class="hero-headline-grid">
+            <div class="hero-copy">
+              <h1 id="hero-title" class="hero-title">
+                <span class="title-line">MAKE THE</span
+                ><span class="title-line title-line-hot"
+                  ><span class="title-cut">UN</span><em>EXPECTED</em
+                  ><i class="title-period">.</i></span
+                >
+              </h1>
+              <div class="hero-deck-row">
+                <span class="hero-deck-index">[ 001—∞ ]</span>
+                <p>
+                  I’m Adib Zaman — a creative developer and digital artist
+                  exploring the beautiful collision of <em>code, chaos,</em> and
+                  imagination.
+                </p>
+                <a
+                  href="#work"
+                  class="hero-jump"
+                  aria-label="Scroll to selected work"
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M12 2v19M4 13l8 8 8-8" /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="hero-art-column">
+              <div class="hero-art-top">
+                <span>UNSTABLE FORM STUDY</span><span>GLSL / REAL-TIME</span>
+              </div>
+              <div
+                id="hero-scene"
+                class="hero-scene"
+                aria-label="Interactive procedural 3D sculpture"
+              >
+                <div class="hero-scene-fallback" aria-hidden="true">
+                  <svg viewBox="0 0 540 540">
+                    <defs>
+                      <linearGradient
+                        id="core-gradient"
+                        x1="40"
+                        y1="10"
+                        x2="450"
+                        y2="510"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#ff6651" />
+                        <stop offset=".52" stop-color="#dc493a" />
+                        <stop offset="1" stop-color="#d7ff62" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      d="M267 41C330 75 390 73 438 153S452 320 385 365 322 474 241 480 83 423 89 335 43 190 111 119 198 63 267 41Z"
+                      fill="url(#core-gradient)"
+                      opacity=".28"
+                    />
+                    <path
+                      d="M270 64 381 128 424 253 356 369 245 436 131 362 80 244 139 132Z"
+                      fill="none"
+                      stroke="#d7ff62"
+                      stroke-width="1.2"
+                    />
+                    <path
+                      d="M270 64 245 436M139 132 356 369M381 128 131 362M80 244 424 253"
+                      fill="none"
+                      stroke="#ff6651"
+                      stroke-opacity=".75"
+                    />
+                    <circle
+                      cx="270"
+                      cy="250"
+                      r="130"
+                      stroke="#f0eee5"
+                      stroke-opacity=".7"
+                      stroke-dasharray="2 10"
+                    />
+                    <circle
+                      cx="270"
+                      cy="250"
+                      r="83"
+                      stroke="#ff6651"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M270 167C315 210 223 220 250 265S335 312 296 347C268 374 205 337 219 297S300 233 270 167Z"
+                      fill="url(#core-gradient)"
+                    />
+                  </svg>
+                </div>
+                <svg
+                  class="hero-rune rune-a"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path d="M50 3 96 50 50 97 4 50Z" />
+                  <path d="M50 22 78 50 50 78 22 50Z" />
+                  <circle cx="50" cy="50" r="5" />
+                </svg>
+                <svg
+                  class="hero-rune rune-b"
+                  viewBox="0 0 100 100"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M50 7C76 7 93 26 93 50S76 93 50 93 7 74 7 50 24 7 50 7Z"
+                  />
+                  <path d="M50 16 78 66 22 66Z" />
+                  <path d="M50 16V88M16 50H84" />
+                </svg>
+                <div class="hero-coords">
+                  <span>POS / 0.001</span
+                  ><span>ENTROPY: <b id="entropy-value">72.4</b>%</span>
+                </div>
+                <div class="hero-scene-bottom">
+                  <span><i></i> SYSTEM IS ALIVE</span
+                  ><span>MOVE YOUR CURSOR ↗</span>
+                </div>
+              </div>
+              <div class="hero-art-foot">
+                <span>FIG 01. / CONTOUR OF A THOUGHT</span
+                ><span>NO TWO FRAMES ALIKE</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-bottom-rail">
+            <span>INDEPENDENT BY NATURE</span>
+            <div class="rail-track"><i></i></div>
+            <span>RAJSHAHI, BANGLADESH <b>↘</b></span>
+          </div>
+        </div>
+        <div class="hero-giant-side" aria-hidden="true">
+          UNFINISHED / UNFILTERED / UNEXPECTED
+        </div>
+        <div class="hero-scroll-hint">
+          <span class="scroll-wheel"></span><span>DESCEND TO EXPLORE</span>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
