@@ -2056,3 +2056,164 @@ input:focus-visible {
 .text-arrow-link:hover b {
   transform: translate(4px, -4px);
 }
+/* Toolkit */
+.toolkit-section {
+  position: relative;
+  z-index: 4;
+  padding-block: clamp(80px, 10vw, 145px);
+  background: var(--bone);
+  color: var(--void);
+  overflow: hidden;
+}
+.toolkit-section:before {
+  content: "";
+  position: absolute;
+  left: -200px;
+  top: -160px;
+  width: 580px;
+  height: 580px;
+  border: 1px solid rgba(228, 46, 32, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 45px rgba(228, 46, 32, 0.025),
+    0 0 0 95px rgba(228, 46, 32, 0.02),
+    0 0 0 150px rgba(228, 46, 32, 0.015);
+}
+.toolkit-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(45px, 9vw, 140px);
+  z-index: 2;
+}
+.toolkit-section .section-flag-row {
+  border-color: rgba(17, 18, 15, 0.2);
+}
+.toolkit-section .section-flag-row .section-flag {
+  color: rgba(17, 18, 15, 0.78);
+}
+.toolkit-section .section-flag b {
+  color: var(--lava);
+}
+.toolkit-section .section-cross {
+  color: var(--lava);
+}
+.toolkit-title {
+  margin: clamp(45px, 6vw, 80px) 0 25px;
+  font: 800 clamp(44px, 6.3vw, 88px)/0.84 var(--display);
+  letter-spacing: -0.095em;
+}
+.toolkit-title em {
+  color: var(--lava);
+  font-style: normal;
+}
+.toolkit-blurb {
+  max-width: 350px;
+  font: 11px/1.9 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+  color: #8a8b80;
+}
+.toolkit-sigil {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 55px;
+  font-size: 7px;
+  color: #8a8b80;
+}
+.toolkit-sigil svg {
+  width: 100px;
+  stroke: var(--lava);
+  stroke-width: 0.9;
+  overflow: visible;
+  animation: geometry-float 32s linear infinite;
+}
+.toolkit-sigil svg path:nth-child(2) {
+  stroke: var(--void);
+  stroke-dasharray: 2 5;
+}
+.toolkit-list {
+  border-top: 1px solid rgba(17, 18, 15, 0.23);
+  align-self: stretch;
+}
+.toolkit-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr 45px;
+  gap: 15px;
+  align-items: center;
+  min-height: 105px;
+  border-bottom: 1px solid rgba(17, 18, 15, 0.23);
+  overflow: hidden;
+  padding: 15px 0;
+}
+.toolkit-item:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--acid);
+  transform: translateX(-102%);
+  transition: transform 0.6s var(--ease);
+}
+.toolkit-item:hover:before {
+  transform: translateX(0);
+}
+.toolkit-index,
+.toolkit-item > div,
+.toolkit-shape {
+  position: relative;
+  z-index: 1;
+}
+.toolkit-index {
+  font: 9px var(--mono);
+  color: var(--lava);
+}
+.toolkit-item h3 {
+  margin: 0 0 4px;
+  font: 800 clamp(21px, 2.8vw, 34px)/1 var(--display);
+  letter-spacing: -0.055em;
+}
+.toolkit-item p {
+  margin: 0;
+  color: #8a8b80;
+  font-size: 10px;
+}
+.toolkit-shape {
+  justify-self: end;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--lava);
+  transition: transform 0.6s var(--ease);
+}
+.toolkit-item:hover .toolkit-shape {
+  transform: rotate(45deg);
+}
+.shape-square {
+  border-radius: 4px;
+}
+.shape-orbit {
+  border-radius: 50%;
+  transform: scaleX(0.48) rotate(35deg);
+}
+.toolkit-item:hover .shape-orbit {
+  transform: scaleX(0.48) rotate(160deg);
+}
+.shape-triangle {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: var(--lava);
+  border: 0;
+}
+.shape-hex {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  background: var(--lava);
+  border: 0;
+}
+.shape-star {
+  border: 0;
+  color: var(--lava);
+  font-size: 37px;
+  line-height: 1;
+}
+.toolkit-item:hover .shape-star {
+  transform: rotate(80deg);
+}
