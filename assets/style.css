@@ -2381,3 +2381,221 @@ input:focus-visible {
   font-size: 7px;
   color: #8a8b80;
 }
+.footer-shell {
+  position: relative;
+  z-index: 4;
+  min-height: 105px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 20px clamp(18px, 4vw, 62px);
+  border-top: 1px solid rgba(240, 238, 229, 0.1);
+  background: var(--void);
+}
+.footer-mark {
+  font: 8px var(--mono);
+  letter-spacing: 0.07em;
+}
+.footer-mark .brand-glyph {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+}
+.footer-mark > span:last-child {
+  color: var(--muted);
+}
+.footer-mark b {
+  color: var(--acid);
+  font-size: 15px;
+  margin-left: 7px;
+}
+.footer-message {
+  text-align: center;
+  font-size: 7px;
+  line-height: 1.8;
+  color: #8a8b80;
+}
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 17px;
+  flex-wrap: wrap;
+  font-size: 7px;
+  color: var(--muted);
+}
+.footer-links a {
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: var(--acid);
+}
+/* Project modal */
+.project-modal-backdrop {
+  position: fixed;
+  z-index: 1800;
+  inset: 0;
+  padding: clamp(14px, 3vw, 42px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background: rgba(6, 5, 4, 0.88);
+  backdrop-filter: blur(14px);
+}
+.project-modal {
+  width: min(1280px, 100%);
+  max-height: calc(100vh - 50px);
+  overflow: auto;
+  background: var(--void);
+  border: 1px solid rgba(255, 102, 81, 0.45);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.65);
+  clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 25px, 100% 100%, 0 100%);
+}
+.project-modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 8px;
+  color: var(--muted);
+}
+.project-modal-top span {
+  color: var(--ember);
+}
+.project-modal-top button {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-size: 19px;
+}
+.project-modal-top button:hover {
+  background: var(--ember);
+  color: var(--void);
+}
+.project-modal-body {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.78fr) minmax(0, 1.22fr);
+  min-height: 460px;
+}
+.project-modal-copy {
+  padding: clamp(25px, 4vw, 55px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.modal-label {
+  font-size: 8px;
+  color: var(--acid);
+}
+.project-modal-copy h2 {
+  font: 800 clamp(35px, 5vw, 65px)/0.9 var(--display);
+  letter-spacing: -0.08em;
+  margin: 16px 0 20px;
+}
+.project-modal-copy h2 span {
+  color: var(--ember);
+}
+.project-modal-copy > p:not(.modal-label) {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.modal-attributes {
+  width: 100%;
+  display: grid;
+  gap: 0;
+  margin-top: 15px;
+  border-top: 1px solid var(--line);
+}
+.modal-attributes > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 8px;
+}
+.modal-attributes small {
+  font-size: 8px;
+  color: var(--muted);
+}
+.modal-attributes b {
+  font-weight: 400;
+  text-align: right;
+  color: var(--bone);
+}
+.modal-open-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 25px;
+  padding: 13px 15px;
+  border: 1px solid var(--acid);
+  font-size: 8px;
+  color: var(--acid);
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+.modal-open-link:hover {
+  background: var(--acid);
+  color: var(--void);
+}
+.modal-open-link b {
+  font: 18px var(--sans);
+}
+.modal-honesty-note {
+  font-size: 7px;
+  color: #8a8b80;
+  line-height: 1.7;
+  margin-top: auto;
+  padding-top: 22px;
+}
+.project-modal-preview {
+  min-width: 0;
+  background: #191a16;
+  border-left: 1px solid var(--line);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.preview-browser {
+  flex: 0 0 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.preview-browser > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ember);
+}
+.preview-browser > span:nth-child(2) {
+  background: var(--amber);
+}
+.preview-browser > span:nth-child(3) {
+  background: var(--acid);
+}
+.preview-browser b {
+  font: 7px var(--mono);
+  color: var(--muted);
+  margin-left: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.project-modal-preview img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 130px);
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid rgba(240, 238, 229, 0.08);
+}
