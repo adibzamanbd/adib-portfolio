@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#11120f" />
     <meta
@@ -39,8 +39,57 @@
     <script defer src="./assets/auth-config.js"></script>
     <script defer src="./assets/script.js"></script>
     <script defer src="./assets/auth.js"></script>
-</head>
-<body>
-      
-</body>
+  </head>
+  <body class="inferno-theme">
+    <canvas id="inferno-smoke" aria-hidden="true"></canvas>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="edge-vignette" aria-hidden="true"></div>
+    <div class="reading-bar" aria-hidden="true">
+      <span id="reading-bar-fill"></span>
+    </div>
+    <div class="inferno-loader" id="preloader" role="status" aria-live="polite">
+      <div class="loader-grid" aria-hidden="true"></div>
+      <div class="loader-top">
+        <a class="loader-logo" href="#top">A<span>Z</span><b>®</b></a
+        ><span>INDEPENDENT CREATIVE PRACTICE</span><span>BD / 24°22′N</span>
+      </div>
+      <div class="loader-stage" aria-hidden="true">
+        <svg class="loader-sigil" viewBox="0 0 160 160" fill="none">
+          <path
+            class="sigil-path sigil-outer"
+            d="M80 5 145 42 145 118 80 155 15 118 15 42Z"
+          />
+          <path
+            class="sigil-path sigil-inner"
+            d="M80 24 126 51 126 107 80 134 34 107 34 51Z"
+          />
+          <path
+            class="sigil-path sigil-flame"
+            d="M81 31C96 55 58 65 68 88C73 102 88 99 94 86C101 105 80 119 61 106C39 91 58 63 68 52C68 69 83 63 81 31Z"
+          />
+          <circle class="sigil-dot" cx="112" cy="40" r="4" />
+        </svg>
+        <p class="loader-overline"><i></i> PREPARING THE EXPERIENCE</p>
+        <h1>ADIB<span>ZAMAN</span><sup>®</sup></h1>
+        <p class="loader-description">Preparing your creative playground.</p>
+      </div>
+      <div class="loader-bottom">
+        <div class="loader-step-copy">
+          <span id="loader-step">01 / IGNITION</span
+          ><small id="loader-detail">Loading the visual system</small>
+        </div>
+        <div class="loader-progress">
+          <span id="loader-progress-fill"></span>
+        </div>
+        <span id="loader-percent">00%</span>
+      </div>
+      <div class="loader-exit" aria-hidden="true"></div>
+    </div>
+    <div class="cursor-core" id="cursor-core" aria-hidden="true">
+      <span></span>
+    </div>
+    <div class="cursor-caption" id="cursor-caption" aria-hidden="true">
+      DRAG THE CHAOS
+    </div>
+  </body>
 </html>
