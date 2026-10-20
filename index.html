@@ -457,6 +457,74 @@
           </div>
         </div>
       </section>
+      <!-- Interactive lab section start -->
+      <section
+        class="field-section"
+        id="field-lab"
+        aria-labelledby="field-title"
+      >
+        <div class="field-shell section-shell">
+          <div class="section-flag-row reveal">
+            <span class="section-flag"><b>03</b> / THE ABYSS ENGINE</span
+            ><span class="section-note">REAL-TIME / WEBGL / GLSL</span
+            ><span class="field-live"><i></i> FIELD ACTIVE</span>
+          </div>
+          <div class="field-heading">
+            <div>
+              <p class="field-kicker reveal">AN INTERACTIVE STUDY IN CHAOS</p>
+              <h2 id="field-title" class="field-title reveal">
+                TOUCH THE<br /><em>VOID.</em>
+              </h2>
+            </div>
+            <div class="field-copy reveal">
+              <p>
+                A living field of procedural smoke, molten light, and warped
+                geometry. Move your cursor. Pull the atmosphere apart.
+              </p>
+              <button id="field-pulse" class="field-pulse" type="button">
+                <span>✳</span> DISTURB THE FIELD
+              </button>
+            </div>
+          </div>
+          <div class="field-viewport" id="field-viewport">
+            <canvas
+              id="field-canvas"
+              aria-label="Interactive real-time GLSL visual artwork"
+            ></canvas>
+            <div class="field-view-vignette"></div>
+            <svg
+              class="field-overlay-shapes"
+              viewBox="0 0 1200 600"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M600 34 886 536H314Z" />
+              <path d="M600 92 817 477H383Z" />
+              <path d="M600 151 748 414H452Z" />
+              <path d="M0 300H1200M600 0V600" />
+              <path d="M160 0 1040 600M1040 0 160 600" />
+            </svg>
+            <div class="field-reticle" aria-hidden="true">
+              <span></span><i></i>
+            </div>
+            <div class="field-corner field-corner-a">
+              X: <b id="field-x">0.00</b><br />Y: <b id="field-y">0.00</b>
+            </div>
+            <div class="field-corner field-corner-b">
+              NOISE FIELD / 02<br />POINTER = DISTURBANCE
+            </div>
+            <div class="field-bottomline">
+              <span>MOVE / PRESS / RELEASE</span><span>VISUAL SYSTEM 02.1</span
+              ><span>WEBGL <b id="field-status">INITIALIZING</b></span>
+            </div>
+          </div>
+          <div class="field-footnote">
+            <span>01 — THE FIELD RESPONDS TO YOUR PRESENCE.</span
+            ><span>02 — NOTHING HERE IS A VIDEO.</span
+            ><span>03 — ALL SHAPES ARE COMPUTED.</span>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
