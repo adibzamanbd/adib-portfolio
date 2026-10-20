@@ -890,7 +890,7 @@
     const typeLabel = (t) =>
       t === "All work" ? "ALL SIGNALS" : t.toUpperCase();
     function card(project) {
-      return `<article class="project-card" data-project-id="${project.id}"><button class="project-open" data-open-project="${project.id}" data-cursor="VIEW FILE" type="button" aria-label="Open details for ${project.title}"><div class="project-visual"><img src="images/project-${project.id}-preview.webp" alt="Screenshot preview of ${project.title}" width="1000" height="650" loading="${project.id < 3 ? "eager" : "lazy"}"><span class="project-number"><b>${String(project.id).padStart(2, "0")}</b> / 09</span><span class="project-view" aria-hidden="true">↗</span><span class="project-visual-label">OPEN ARTIFACT <span>↗</span></span></div><div class="project-info"><div><p class="project-type">${project.label}</p><h3>${project.title}</h3><div class="project-info-bottom"><i></i><span>${String(project.id).padStart(2, "0")} / WEB EXPERIMENT</span></div></div><span class="project-arrow" aria-hidden="true">↗</span></div></button></article>`;
+      return `<article class="project-card" data-project-id="${project.id}"><button class="project-open" data-open-project="${project.id}" data-cursor="VIEW FILE" type="button" aria-label="Open details for ${project.title}"><div class="project-visual"><img src="./assets/images/project-${project.id}-preview.webp" alt="Screenshot preview of ${project.title}" width="1000" height="650" loading="${project.id < 3 ? "eager" : "lazy"}"><span class="project-number"><b>${String(project.id).padStart(2, "0")}</b> / 09</span><span class="project-view" aria-hidden="true">↗</span><span class="project-visual-label">OPEN ARTIFACT <span>↗</span></span></div><div class="project-info"><div><p class="project-type">${project.label}</p><h3>${project.title}</h3><div class="project-info-bottom"><i></i><span>${String(project.id).padStart(2, "0")} / WEB EXPERIMENT</span></div></div><span class="project-arrow" aria-hidden="true">↗</span></div></button></article>`;
     }
     function render(filter = state.activeFilter) {
       state.activeFilter = filter;
@@ -936,7 +936,7 @@
       $("#modal-live-link").href = p.href;
       $("#modal-url-label").textContent = p.href.replace(/^https:\/\//, "");
       const img = $("#modal-preview-image");
-      img.src = `images/project-${p.id}-full.webp`;
+      img.src = `./assets/images/project-${p.id}-full.webp`;
       img.alt = `Full-page screenshot of ${p.title}`;
       $("#project-modal-backdrop").hidden = false;
       document.body.classList.add("is-modal-open");
