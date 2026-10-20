@@ -88,7 +88,81 @@ input:focus-visible {
 [hidden] {
   display: none !important;
 }
-
+.content-shell,
+.section-shell {
+  width: min(var(--max), calc(100% - clamp(30px, 7vw, 120px)));
+  margin-inline: auto;
+}
+.section-shell {
+  position: relative;
+}
+.signal-pip,
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--acid);
+  box-shadow: 0 0 13px rgba(215, 255, 98, 0.85);
+  border-radius: 50%;
+  margin-right: 9px;
+  vertical-align: middle;
+}
+.kicker,
+.section-flag,
+.section-note,
+.hero-index,
+.hero-art-top,
+.hero-art-foot,
+.hero-coords,
+.hero-scene-bottom,
+.hero-bottom-rail,
+.hero-scroll-hint,
+.loader-logo,
+.loader-top,
+.loader-overline,
+.loader-step-copy,
+.loader-bottom,
+.field-kicker,
+.field-live,
+.field-corner,
+.field-bottomline,
+.field-footnote,
+.photo-coordinate,
+.photo-caption,
+.about-card-photo span,
+.about-sticker text,
+.about-signature-row > span:last-child,
+.text-arrow-link,
+.toolkit-item > span,
+.toolkit-blurb,
+.end-overline,
+.end-micro-row,
+.footer-mark,
+.footer-message,
+.footer-links,
+.cursor-caption,
+.scroll-readout,
+.project-type,
+.project-meta,
+.project-number,
+.project-visual-label,
+.project-count,
+.project-controls,
+.project-bottom-note,
+.manifesto-overline,
+.manifesto-aside,
+.manifesto-principle > span,
+.manifesto-principle p,
+.manifesto-lower blockquote cite,
+.modal-label,
+.project-modal-top,
+.modal-attributes,
+.modal-open-link,
+.modal-honesty-note {
+  font-family: var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
 .reading-bar {
   position: fixed;
   z-index: 1000;
@@ -346,7 +420,6 @@ input:focus-visible {
     100% 100%
   );
 }
-
 /* Cursor */
 .cursor-core {
   position: fixed;
@@ -386,4 +459,145 @@ input:focus-visible {
 }
 .cursor-caption.is-visible {
   opacity: 1;
+}
+/* Header */
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 100%;
+  min-height: 94px;
+  padding: 21px clamp(18px, 4vw, 62px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 30px;
+  align-items: center;
+  border-bottom: 1px solid rgba(240, 238, 229, 0.1);
+  background: linear-gradient(180deg, rgba(17, 18, 15, 0.5), transparent);
+}
+.brand-lockup,
+.footer-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+}
+.brand-glyph {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 39px;
+  height: 39px;
+  border: 1px solid rgba(255, 102, 81, 0.65);
+  font: 800 17px var(--display);
+  letter-spacing: -0.16em;
+  padding-right: 3px;
+  transform: rotate(-7deg);
+}
+.brand-glyph:after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--acid);
+  opacity: 0.6;
+  transform: rotate(30deg);
+}
+.brand-glyph span {
+  color: var(--ember);
+}
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  font: 700 11px var(--display);
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+}
+.brand-wordmark small {
+  font: 8px var(--mono);
+  color: var(--muted);
+  letter-spacing: 0.07em;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 36px);
+}
+.main-nav > a {
+  font-size: 11px;
+  color: #c7c5bc;
+  transition: color 0.25s;
+}
+.main-nav > a:hover {
+  color: var(--acid);
+}
+.main-nav > a i {
+  font: 8px var(--mono);
+  color: var(--ember);
+  font-style: normal;
+  margin-left: 4px;
+}
+.nav-member {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(215, 255, 98, 0.35);
+  background: rgba(215, 255, 98, 0.04);
+  color: var(--acid);
+  font: 9px var(--mono);
+  letter-spacing: 0.08em;
+  padding: 10px 12px;
+  cursor: none;
+  transition:
+    background 0.25s,
+    border 0.25s;
+}
+.nav-member:hover {
+  background: rgba(215, 255, 98, 0.12);
+  border-color: var(--acid);
+}
+.nav-member b {
+  font-size: 14px;
+  font-weight: 400;
+}
+.nav-member-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0 9px var(--acid);
+}
+.topbar-cta {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 9px var(--mono);
+  letter-spacing: 0.07em;
+  color: var(--bone);
+}
+.topbar-cta span {
+  color: var(--ember);
+  font-size: 15px;
+  transition: transform 0.25s;
+}
+.topbar-cta:hover span {
+  transform: translate(3px, -3px);
+}
+.menu-button {
+  display: none;
+  background: none;
+  border: 0;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  justify-self: end;
+}
+.menu-button span {
+  display: block;
+  width: 23px;
+  height: 1px;
+  background: var(--bone);
+  margin: 6px auto;
+  transition: transform 0.3s;
 }
